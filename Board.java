@@ -34,7 +34,7 @@ public class Board {
 
     /**
      * Change player each turn
-     *
+     * 
      * @return which player it is
      */
     private static String whichPlayer() {
@@ -91,11 +91,13 @@ public class Board {
                 }
 
                 turnCount++;
+                Main.clearScreen();
+                draw();
+
+            } else {
+                System.out.println("Invalid move - try again");
             }
 
-            Main.clearScreen();
-
-            draw();
             if (gameWon()) {
                 turnCount++;
                 System.out.println();
