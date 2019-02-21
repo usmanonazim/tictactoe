@@ -16,7 +16,8 @@ public class Main {
             b.clearBoard();
             b.draw();
             b.play();
-            System.out.println("Thank you for playing :) -  would you like to play again?(anything)");
+            System.out.println(
+                    "Thank you for playing :) -  would you like to play again?(\"yes\" for yes, anything else for no)");
             Scanner reader = new Scanner(System.in);
             if (reader.nextLine().equalsIgnoreCase("yes")) {
                 System.out.println("let's go again!!!");

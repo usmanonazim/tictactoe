@@ -74,7 +74,7 @@ public class Board {
 
     void play() {
         while (!gameOver()) {
-            System.out.println("Enter your number b");
+            System.out.println("Enter a number(1-9)");
             Scanner reader = new Scanner(System.in);
             int input = reader.nextInt();
             if (isValid(input)) {
@@ -87,11 +87,10 @@ public class Board {
                 }
 
                 turnCount++;
-            } else {
-                System.out.println();
-                System.out.println("Invalid move - try again");
             }
+
             Main.clearScreen();
+
             draw();
             if (gameWon()) {
                 turnCount++;
