@@ -6,7 +6,11 @@ import java.util.Scanner;
  * @version 2019.02.20
  */
 public class Board {
-    private static String[][] board = new String[][] { { "-", "-", "-" }, { "-", "-", "-" }, { "-", "-", "-" } };
+    public Board() {
+
+    }
+
+    public static String[][] board = new String[][] { { "-", "-", "-" }, { "-", "-", "-" }, { "-", "-", "-" } };
 
     private static int turnCount = 0;
 
@@ -39,11 +43,11 @@ public class Board {
      */
     private static String whichPlayer() {
         String playerX = "x";
-        String playerY = "o";
+        String playerO = "o";
         if (turnCount % 2 == 0) {
             return playerX;
         }
-        return playerY;
+        return playerO;
     }
 
     private boolean isValid(int x) {
