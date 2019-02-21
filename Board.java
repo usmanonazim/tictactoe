@@ -81,7 +81,7 @@ public class Board {
             System.out.println("Enter a number(1-9)");
             Scanner reader = new Scanner(System.in);
             int input = reader.nextInt();
-            if (isValid(input)) {
+            if (input >= 1 && input <= 9 && isValid(input)) {
                 if (input <= 3) {
                     board[0][input - 1] = whichPlayer();
                 } else if (input <= 6) {
