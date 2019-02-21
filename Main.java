@@ -7,7 +7,7 @@ public class Main {
         System.out.flush();
     }
 
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) {
         boolean finished = false;
         while (!finished) {
             clearScreen();
