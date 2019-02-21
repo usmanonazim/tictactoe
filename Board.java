@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Board {
@@ -90,11 +91,12 @@ public class Board {
                 System.out.println();
                 System.out.println("Invalid move - try again");
             }
+            Main.clearScreen();
             draw();
             if (gameWon()) {
                 turnCount++;
                 System.out.println();
-                System.out.println(whichPlayer() + " has won");
+                System.out.println("\n" + whichPlayer() + " has won");
                 break;
             }
 
