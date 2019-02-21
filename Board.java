@@ -1,18 +1,18 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * @author Usman Omar
  * @version 2019.02.20
  */
 public class Board {
-    public Board() {
-
-    }
-
     public static String[][] board = new String[][] { { "-", "-", "-" }, { "-", "-", "-" }, { "-", "-", "-" } };
 
     private static int turnCount = 0;
+
+    public Board() {
+    }
 
     /**
      * Draw the board for the game Tic Tac Toe
@@ -82,34 +82,40 @@ public class Board {
 
     void play() {
         while (!gameOver()) {
-            System.out.println("Enter a number(1-9)");
-            Scanner reader = new Scanner(System.in);
-            int input = reader.nextInt();
-            if (input >= 1 && input <= 9 && isValid(input)) {
-                if (input <= 3) {
-                    board[0][input - 1] = whichPlayer();
-                } else if (input <= 6) {
-                    board[1][input - 4] = whichPlayer();
-                } else if (input <= 9) {
-                    board[2][input - 7] = whichPlayer();
+            try {
+                System.out.println("Enter a number(1-9)");
+                Scanner reader = new Scanner(System.in);
+
+                int input = reader.nextInt();
+                if (input >= 1 && input <= 9 && isValid(input)) {
+                    if (input <= 3) {
+                        board[0][input - 1] = whichPlayer();
+                    } else if (input <= 6) {
+                        board[1][input - 4] = whichPlayer();
+                    } else if (input <= 9) {
+                        board[2][input - 7] = whichPlayer();
+                    }
+
+                    turnCount++;
+                    Main.clearScreen();
+                    draw();
+
+                } else {
+                    System.out.println("Invalid move - try again");
                 }
 
-                turnCount++;
-                Main.clearScreen();
-                draw();
-
-            } else {
-                System.out.println("Invalid move - try again");
-            }
-
-            if (gameWon()) {
-                turnCount++;
-                System.out.println();
-                System.out.println("\n" + whichPlayer() + " has won");
-                break;
+                if (gameWon()) {
+                    turnCount++;
+                    System.out.println();
+                    System.out.println("\n" + whichPlayer() + " has won");
+                    break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Must enter a number");
             }
 
         }
+
     }
 
     /**
