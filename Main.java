@@ -2,6 +2,9 @@
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Clear the terminal screen
+     */
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -10,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         boolean finished = false;
         while (!finished) {
-            clearScreen();
+            clearScreen();// clear terminal screen before redrawing the game board.
             System.out.println("Welcome to the world famous tictactoe\nPress a number (from 1-9) to begin\n");
             Board b = new Board();
             b.clearBoard();

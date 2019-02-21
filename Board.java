@@ -28,6 +28,9 @@ public class Board {
         System.out.println();
     }
 
+    /**
+     * Clear the board before playing again
+     */
     void clearBoard() {
         for (int rows = 0; rows < board.length; rows++) {
             for (int cols = 0; cols < board.length; cols++) {
@@ -50,6 +53,11 @@ public class Board {
         return playerO;
     }
 
+    /**
+     * Checks whether the player's move is valid
+     * 
+     * @return true if the move is valid
+     */
     private boolean isValid(int x) {
         if (x <= 3 && board[0][x - 1].equals("-")) {
             return true;
@@ -80,6 +88,10 @@ public class Board {
 
     }
 
+    /**
+     * Play the game - end when either there are no more moves to be made or either
+     * player has won.
+     */
     void play() {
         while (!gameOver()) {
             try {
@@ -121,7 +133,7 @@ public class Board {
     /**
      * Checks whether either player has won the game
      * 
-     * @return true if a row is all x's or o's
+     * @return true if a player has won
      */
     private static boolean gameWon() {
         // check horizontally
