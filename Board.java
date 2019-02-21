@@ -1,6 +1,10 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * @author Usman Omar
+ * @version 2019.02.20
+ */
 public class Board {
     private static String[][] board = new String[][] { { "-", "-", "-" }, { "-", "-", "-" }, { "-", "-", "-" } };
 
@@ -103,8 +107,8 @@ public class Board {
     }
 
     /**
-     * Checks whether either player has won the game - currently only checks rows
-     *
+     * Checks whether either player has won the game
+     * 
      * @return true if a row is all x's or o's
      */
     private static boolean gameWon() {
