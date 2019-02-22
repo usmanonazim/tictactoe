@@ -122,6 +122,7 @@ public class Board {
                     System.out.println("\n" + whichPlayer() + " has won");
                     break;
                 }
+                reader.close();
             } catch (InputMismatchException e) {
                 System.out.println("Must enter a number");
             }
