@@ -27,7 +27,6 @@ public class Main {
             } else {
                 finished = true;
             }
-            reader.close();
         }
 
     }
